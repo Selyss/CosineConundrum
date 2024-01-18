@@ -1,47 +1,14 @@
 import click
-import re
 import json
 import random
-
-# LaTeX matching for primary stuff
-sine = r"\\sin\\theta"
-sinesqrd = "\\sin^2\\theta"
-consine = "\\cos\\theta"
-consinesqrd = "\\cos^2\\theta"
-tangent = "\\tangent\\theta"
-tangentsqrd = "\\tangent^2\\theta"
+import math
+import numpy as np
+import latexify
 
 
-def random_sine():
-    # open config.json
-    with open("config.json", "r") as file:
-        data = json.load(file)
-
-    rand = random.choice(data["sine"])
-    return rand
-
-
-def random_sinesqrd():
-    # open config.json
-    with open("config.json", "r") as file:
-        data = json.load(file)
-
-    rand = random.choice(data["sinesquared"])
-    return rand
-
-
-def expand(input_file):
-    with open(input_file, "r") as file:
-        lines = file.readlines()
-
-        sines = re.finditer(sine, lines)
-        for s in sines:
-            lines[s.start()] = random_sine()
-
-    with open(input_file, "w") as file:
-        file.writelines(lines)
-
-    click.echo("Success: Equations expanded.")
+@latexify.function
+def generate():
+    pass
 
 
 @click.command()
@@ -57,11 +24,8 @@ def main(input_file):
         return
 
     click.echo("Success: Valid file.")
-    with open(input_file, "w") as file:
-        file.write("\\[{\\sin^2\\theta}={\\sin^2\\theta}\\]")
-
-    click.echo("Success: File modified.")
-    expand(input_file)
+    # TODO:
+    click.echo(f"Success: File '{input_file}' modified.")
 
 
 if __name__ == "__main__":
