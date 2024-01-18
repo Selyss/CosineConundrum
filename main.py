@@ -12,7 +12,7 @@ def main(input_file):
     
     click.echo("Success: Valid file.")
     with open(input_file, 'w') as file:
-        file.write("\\[{\\sin\\theta}\\]") 
+        file.write("\\[{\\sin^2\\theta}={\\sin^2\\theta}\\]") 
 
     click.echo("Success: File modified.")   
 
