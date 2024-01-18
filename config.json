@@ -6,15 +6,13 @@
   ],
   "sinesquared": [
     "\\frac{1}{\\csc^2\\theta}",
-    "\\frac{\\tan^2\\theta}{1+\\tan^2\\theta}",
+    "\\frac{\\tan^2\\theta}{1+\\tan^2\\theta}"
   ],
   "cosine": [
     "\\frac{1}{\\sec\\theta}",
-    "\\frac{\sin\\theta}{\\tan\\theta}",
+    "\\frac{\\sin\\theta}{\\tan\\theta}",
     "\\sin\\theta\\cot\\theta",
-    "\\frac{\\cot\\theta}{\\csc\\theta}",
+    "\\frac{\\cot\\theta}{\\csc\\theta}"
   ],
-  "consinesquared": [
-    "\\csc^2\\theta-\\sin^2\\theta-\\cot^2\\theta",
-  ],
+  "consinesquared": ["\\csc^2\\theta-\\sin^2\\theta-\\cot^2\\theta"]
 }
