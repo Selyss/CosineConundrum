@@ -1,9 +1,10 @@
 import click
+import re
 import json
 import random
 
 # LaTeX matching for primary stuff
-sine = "\\sin\\theta"
+sine = r"\\sin\\theta"
 sinesqrd = "\\sin^2\\theta"
 consine = "\\cos\\theta"
 consinesqrd = "\\cos^2\\theta"
@@ -33,14 +34,9 @@ def expand(input_file):
     with open(input_file, "r") as file:
         lines = file.readlines()
 
-    for line in lines:
-        if sine in line:
-            val = random_sine()
-            line = line.replace(sine, val)
-
-        if sinesqrd in line:
-            val = random_sinesqrd()
-            line = line.replace(sinesqrd, val)
+        sines = re.finditer(sine, lines)
+        for s in sines:
+            lines[s.start()] = random_sine()
 
     with open(input_file, "w") as file:
         file.writelines(lines)
