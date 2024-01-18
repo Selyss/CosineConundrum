@@ -1,0 +1,11 @@
+{
+  "sinesquared": [
+    "\\frac{\\tan^2\\theta}{1 + \\tan^2\\theta}",
+  ],
+  "cosine": [
+    "\\frac{\sin\\theta}{\\tan\\theta}",
+    "\sin\\theta\cot\\theta",
+    "\\frac{\cot\\theta}{\csc\\theta}",
+
+  ],
+}
